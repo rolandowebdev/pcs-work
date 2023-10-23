@@ -15,7 +15,7 @@ import {
 	PageContainer,
 	SectionContainer
 } from '@/components'
-import { activities, listNews } from '@/data'
+import { activities, listNews, listPeople } from '@/data'
 import { formatDate, formatDay } from '@/lib'
 import { useIsMobile } from '@/hooks'
 
@@ -33,7 +33,7 @@ export const App = () => {
 			<Card key={news.id} className='shadow-md mb-[2px] mr-4'>
 				<CardHeader>
 					<div className='flex items-center gap-4'>
-						<Avatar>
+						<Avatar className='h-14 w-14'>
 							<AvatarImage src={news.image} />
 							<AvatarFallback>{news.name}</AvatarFallback>
 						</Avatar>
@@ -87,7 +87,7 @@ export const App = () => {
 					<Card className='bg-gradient-to-tl from-fuchsia-600 to-red-600 text-white'>
 						<CardHeader>
 							<div className='flex items-center gap-4'>
-								<Avatar>
+								<Avatar className='h-14 w-14 shadow-lg'>
 									<AvatarImage src='https://github.com/shadcn.png' />
 									<AvatarFallback>Profile Photo</AvatarFallback>
 								</Avatar>
@@ -150,6 +150,35 @@ export const App = () => {
 						animationEasingFunction='ease-in-out'
 						controlsStrategy='alternate'
 					/>
+				</SectionContainer>
+
+				<SectionContainer title='Online'>
+					<Card className='shadow-md h-32 shadow-zinc-300'>
+						<CardContent className='p-5'>
+							<div className='flex justify-center items-center'>
+								{listPeople.map((people) => (
+									<ColumnElementContainer
+										key={people.id}
+										className='gap-[2px] items-center -mr-[11px]'>
+										<Avatar className='border-4 border-white h-14 w-14 lg:h-[62px] lg:w-[62px]'>
+											<AvatarImage src={people.image} />
+											<AvatarFallback>{people.name}</AvatarFallback>
+										</Avatar>
+										<span className='text-[9px] font-bold'>{people.name}</span>
+										<span className='text-[9px] text-gray-500 font-semibold'>
+											{people.role}
+										</span>
+									</ColumnElementContainer>
+								))}
+
+								<ColumnElementContainer className='-mr-[11px] justify-center items-center flex-row  -mt-8 border-4 border-white z-10 h-14 w-14 flex rounded-full bg-gradient-to-tl from-fuchsia-600 to-red-600 text-white lg:h-[62px] lg:w-[62px]'>
+									<span className='font-bold text-[11px] flex flex-col items-center'>
+										10 <span>More</span>
+									</span>
+								</ColumnElementContainer>
+							</div>
+						</CardContent>
+					</Card>
 				</SectionContainer>
 			</PageContainer>
 		</>
