@@ -12,7 +12,8 @@ import {
 	CardTitle,
 	ColumnElementContainer,
 	Navbar,
-	PageContainer
+	PageContainer,
+	SectionContainer
 } from '@/components'
 import { activities, listNews } from '@/data'
 import { formatDate, formatDay } from '@/lib'
@@ -34,7 +35,7 @@ export const App = () => {
 					<div className='flex items-center gap-4'>
 						<Avatar>
 							<AvatarImage src={news.image} />
-							<AvatarFallback>CN</AvatarFallback>
+							<AvatarFallback>{news.name}</AvatarFallback>
 						</Avatar>
 						<ColumnElementContainer className='gap-1'>
 							<CardTitle>{news.name}</CardTitle>
@@ -42,7 +43,7 @@ export const App = () => {
 					</div>
 
 					<ColumnElementContainer className='gap-2'>
-						<span className='text-sm'>{formatDay(news.date)}</span>
+						<span className='text-sm'>{formatDay(news.date)},</span>
 						<time
 							className='font-bold leading-none'
 							dateTime={formatDate(news.date)}>
@@ -82,15 +83,13 @@ export const App = () => {
 			</Navbar>
 
 			<PageContainer className='flex flex-col gap-11'>
-				<ColumnElementContainer className='gap-3'>
-					<h2 className='text-lg font-semibold'>Hi Daenarys!</h2>
-
+				<SectionContainer title='Hi Daenarys!'>
 					<Card className='bg-gradient-to-tl from-fuchsia-600 to-red-600 text-white'>
 						<CardHeader>
 							<div className='flex items-center gap-4'>
 								<Avatar>
 									<AvatarImage src='https://github.com/shadcn.png' />
-									<AvatarFallback>CN</AvatarFallback>
+									<AvatarFallback>Profile Photo</AvatarFallback>
 								</Avatar>
 								<ColumnElementContainer className='gap-1'>
 									<CardTitle>Daenarys</CardTitle>
@@ -114,11 +113,9 @@ export const App = () => {
 							<Activity />
 						</CardFooter>
 					</Card>
-				</ColumnElementContainer>
+				</SectionContainer>
 
-				<ColumnElementContainer className='gap-3'>
-					<h2 className='text-lg font-semibold'>Today&apos;s Activity</h2>
-
+				<SectionContainer title="Today's Activity">
 					<div className='grid grid-cols-3 gap-2'>
 						{activities.map((activity) => (
 							<Card key={activity.id} className='border'>
@@ -136,11 +133,9 @@ export const App = () => {
 							</Card>
 						))}
 					</div>
-				</ColumnElementContainer>
+				</SectionContainer>
 
-				<ColumnElementContainer>
-					<h2 className='text-lg font-semibold'>PCS News</h2>
-
+				<SectionContainer title='PCS News'>
 					<AliceCarousel
 						infinite
 						autoPlay
@@ -155,7 +150,7 @@ export const App = () => {
 						animationEasingFunction='ease-in-out'
 						controlsStrategy='alternate'
 					/>
-				</ColumnElementContainer>
+				</SectionContainer>
 			</PageContainer>
 		</>
 	)
