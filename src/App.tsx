@@ -4,6 +4,8 @@ import {
 	Avatar,
 	AvatarFallback,
 	AvatarImage,
+	BottomNavbar,
+	Button,
 	Card,
 	CardContent,
 	CardDescription,
@@ -13,7 +15,8 @@ import {
 	ColumnElementContainer,
 	Navbar,
 	PageContainer,
-	SectionContainer
+	SectionContainer,
+	Separator
 } from '@/components'
 import { activities, listNews, listPeople } from '@/data'
 import { formatDate, formatDay } from '@/lib'
@@ -52,6 +55,8 @@ export const App = () => {
 					</ColumnElementContainer>
 				</CardHeader>
 
+				<Separator className='mb-4 w-4/5 mx-auto' />
+
 				<CardContent>
 					<CardDescription className='text-gray-500'>
 						{news.description}
@@ -65,21 +70,28 @@ export const App = () => {
 		<>
 			<Navbar className='justify-between'>
 				<h1 className='text-rose-600 font-bold text-2xl'>Kerja Yuk!</h1>
-				<svg
-					xmlns='http://www.w3.org/2000/svg'
-					width='24'
-					height='24'
-					viewBox='0 0 24 24'
-					fill='none'
-					stroke='currentColor'
-					strokeWidth='2'
-					strokeLinecap='round'
-					strokeLinejoin='round'
-					className='lucide lucide-bell-dot'>
-					<path d='M19.4 14.9C20.2 16.4 21 17 21 17H3s3-2 3-9c0-3.3 2.7-6 6-6 .7 0 1.3.1 1.9.3' />
-					<path d='M10.3 21a1.94 1.94 0 0 0 3.4 0' />
-					<circle cx='18' cy='8' r='4' className='fill-rose-600 stroke-none' />
-				</svg>
+				<Button variant='ghost'>
+					<svg
+						xmlns='http://www.w3.org/2000/svg'
+						width='24'
+						height='24'
+						viewBox='0 0 24 24'
+						fill='none'
+						stroke='currentColor'
+						strokeWidth='2'
+						strokeLinecap='round'
+						strokeLinejoin='round'
+						className='lucide lucide-bell-dot'>
+						<path d='M19.4 14.9C20.2 16.4 21 17 21 17H3s3-2 3-9c0-3.3 2.7-6 6-6 .7 0 1.3.1 1.9.3' />
+						<path d='M10.3 21a1.94 1.94 0 0 0 3.4 0' />
+						<circle
+							cx='18'
+							cy='8'
+							r='4'
+							className='fill-rose-600 stroke-none'
+						/>
+					</svg>
+				</Button>
 			</Navbar>
 
 			<PageContainer className='flex flex-col gap-11'>
@@ -119,13 +131,13 @@ export const App = () => {
 					<div className='grid grid-cols-3 gap-2'>
 						{activities.map((activity) => (
 							<Card key={activity.id} className='border'>
-								<CardHeader className='py-3'>{activity.icon}</CardHeader>
+								<CardHeader className='py-2'>{activity.icon}</CardHeader>
 
 								<CardContent className='p-2'>
 									<CardTitle className='text-center'>{activity.hour}</CardTitle>
 								</CardContent>
 
-								<CardFooter className='py-3'>
+								<CardFooter className='py-2'>
 									<CardDescription className='mx-auto'>
 										{activity.text}
 									</CardDescription>
@@ -153,7 +165,7 @@ export const App = () => {
 				</SectionContainer>
 
 				<SectionContainer title='Online'>
-					<Card className='shadow-md h-32 shadow-zinc-300'>
+					<Card className='shadow-md h-32'>
 						<CardContent className='p-5'>
 							<div className='flex justify-center items-center'>
 								{listPeople.map((people) => (
@@ -181,6 +193,7 @@ export const App = () => {
 					</Card>
 				</SectionContainer>
 			</PageContainer>
+			<BottomNavbar />
 		</>
 	)
 }
