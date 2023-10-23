@@ -7,7 +7,7 @@ const formatDate = (inputDate: Date): string => {
 
 	const formattedDate = dateObj.toLocaleDateString('id-ID', {
 		day: 'numeric',
-		month: 'long',
+		month: 'short',
 		year: 'numeric'
 	})
 

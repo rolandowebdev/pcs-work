@@ -74,3 +74,23 @@
 		@apply bg-background text-foreground min-h-screen antialiased;
 	}
 }
+
+::selection {
+	@apply bg-rose-600 text-white;
+}
+
+::-moz-selection {
+	@apply bg-rose-600 text-white;
+}
+
+::-webkit-scrollbar {
+	@apply w-2;
+}
+
+::-webkit-scrollbar-track {
+	@apply bg-gray-300;
+}
+
+::-webkit-scrollbar-thumb {
+	@apply bg-rose-600;
+}

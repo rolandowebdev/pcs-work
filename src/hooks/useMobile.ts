@@ -1,6 +1,6 @@
 import { useLayoutEffect, useState } from 'react'
 
-export const useIsMobile = () => {
+export const useMobile = () => {
 	const [isMobile, setIsMobile] = useState(
 		typeof window !== 'undefined' ? window.innerWidth < 768 : false
 	)
@@ -23,5 +23,5 @@ export const useIsMobile = () => {
 		}
 	}, [])
 
-	return isMobile
+	return { isMobile }
 }
