@@ -16,6 +16,7 @@ import { cn, formatDate } from '@/lib'
 import { Status } from '@/types'
 import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import parse from 'html-react-parser'
 
 export const Notification = () => {
 	const { isScrolled } = useScroll()
@@ -52,8 +53,7 @@ export const Notification = () => {
 
 	return (
 		<>
-			<Navbar
-				className={cn('gap-2 rounded-b-md', isScrolled ? 'shadow-sm' : '')}>
+			<Navbar className={cn('gap-2', isScrolled ? 'shadow-sm' : '')}>
 				<Link
 					to='/'
 					className={buttonVariants({ variant: 'ghost', size: 'icon' })}>
@@ -85,14 +85,16 @@ export const Notification = () => {
 						</CardHeader>
 
 						<CardContent className='flex flex-col gap-1 '>
-							<CardTitle className='text-base'>{notification.status}</CardTitle>
+							<CardTitle className='text-base'>
+								{notification.category}
+							</CardTitle>
 							<CardDescription className='text-xs text-gray-500'>
-								{notification.description}
+								{parse(notification.description)}
 							</CardDescription>
 						</CardContent>
 
 						<CardFooter className='ml-auto self-start'>
-							<Badge variant='default' className='py-2'>
+							<Badge variant='default' className='py-2 min-w-max'>
 								<time
 									className='font-semibold leading-none text-[10px]'
 									dateTime={formatDate(notification.date)}>

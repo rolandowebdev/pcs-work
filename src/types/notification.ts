@@ -4,10 +4,17 @@ export enum Status {
 	Approved = 'Approved'
 }
 
+export enum Category {
+	Sickness = 'Sickness',
+	Overtime = 'Overtime',
+	Reimburstment = 'Reimburstment'
+}
+
 export type Notification = {
 	id: number
-	icon: React.ReactElement
 	status: Status
+	category: Category
+	icon: React.ReactElement
 	description: string
 	date: Date
 }

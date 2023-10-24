@@ -37,7 +37,7 @@ export const Dashboard = () => {
 		return (
 			<Card key={news.id} className='shadow-md mb-[2px] mr-4 p-4'>
 				<CardHeader>
-					<div className='flex items-center gap-4'>
+					<div className='flex items-center gap-2'>
 						<Avatar className='h-14 w-14'>
 							<AvatarImage src={news.image} />
 							<AvatarFallback>{news.name}</AvatarFallback>
@@ -70,12 +70,8 @@ export const Dashboard = () => {
 
 	return (
 		<>
-			<Navbar
-				className={cn(
-					'justify-between rounded-b-md',
-					isScrolled ? 'shadow-sm sm:px-2' : ''
-				)}>
-				<h1 className='text-rose-600 font-bold text-2xl'>Kerja Yuk!</h1>
+			<Navbar className={cn('justify-between', isScrolled ? 'shadow-sm' : '')}>
+				<h1 className='text-rose-600 font-bold text-xl'>PCS Work</h1>
 				<Link
 					to='/notification'
 					className={buttonVariants({ variant: 'ghost', size: 'icon' })}>
@@ -146,7 +142,13 @@ export const Dashboard = () => {
 								<CardHeader className='py-2'>{activity.icon}</CardHeader>
 
 								<CardContent className='p-2'>
-									<CardTitle className='text-center'>{activity.hour}</CardTitle>
+									<CardTitle
+										className={cn(
+											'text-center',
+											activity.hour === '03:00:00' ? 'text-rose-600' : ''
+										)}>
+										{activity.hour}
+									</CardTitle>
 								</CardContent>
 
 								<CardFooter className='py-2'>
