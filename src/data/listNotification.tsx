@@ -1,4 +1,4 @@
-import { Notification } from '@/types'
+import { Notification, Status } from '@/types'
 import { Coins, Syringe, Timer } from 'lucide-react'
 
 export const listNotification: Notification[] = [
@@ -6,56 +6,56 @@ export const listNotification: Notification[] = [
 		id: 1,
 		icon: <Coins />,
 		date: new Date('2022-02-23'),
-		status: 'Approved',
+		status: Status.Approved,
 		description: 'Your submission has been approved by the Superior.'
 	},
 	{
 		id: 2,
 		icon: <Syringe />,
 		date: new Date('2022-02-23'),
-		status: 'Processed',
+		status: Status.Processed,
 		description: 'Your submission has been processed by the Superior.'
 	},
 	{
 		id: 3,
 		icon: <Timer />,
 		date: new Date('2022-02-23'),
-		status: 'Approved',
+		status: Status.Approved,
 		description: 'Your submission has been approved by the Superior.'
 	},
 	{
 		id: 4,
-		icon: <Syringe />,
+		icon: <Coins />,
 		date: new Date('2022-02-23'),
-		status: 'Rejected',
-		description: 'Your submission has been rejected by the Superior.'
+		status: Status.Processed,
+		description: 'Your submission has been processed by the Superior.'
 	},
 	{
 		id: 5,
 		icon: <Syringe />,
 		date: new Date('2022-02-23'),
-		status: 'Rejected',
-		description: 'Your submission has been rejected by the Superior.'
+		status: Status.Approved,
+		description: 'Your submission has been approved by the Superior.'
 	},
 	{
 		id: 6,
-		icon: <Syringe />,
+		icon: <Coins />,
 		date: new Date('2022-02-23'),
-		status: 'Rejected',
-		description: 'Your submission has been rejected by the Superior.'
+		status: Status.Approved,
+		description: 'Your submission has been approved by the Superior.'
 	},
 	{
 		id: 7,
-		icon: <Syringe />,
+		icon: <Timer />,
 		date: new Date('2022-02-23'),
-		status: 'Rejected',
-		description: 'Your submission has been rejected by the Superior.'
+		status: Status.Processed,
+		description: 'Your submission has been processed by the Superior.'
 	},
 	{
 		id: 8,
 		icon: <Syringe />,
 		date: new Date('2022-02-23'),
-		status: 'Rejected',
+		status: Status.Rejected,
 		description: 'Your submission has been rejected by the Superior.'
 	}
 ]

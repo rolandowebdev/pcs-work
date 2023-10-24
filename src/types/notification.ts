@@ -1,7 +1,13 @@
+export enum Status {
+	Rejected = 'Rejected',
+	Processed = 'Processed',
+	Approved = 'Approved'
+}
+
 export type Notification = {
 	id: number
 	icon: React.ReactElement
-	status: 'Rejected' | 'Processed' | 'Approved'
+	status: Status
 	description: string
 	date: Date
 }

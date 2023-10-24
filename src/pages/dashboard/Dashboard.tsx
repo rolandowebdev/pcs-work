@@ -1,5 +1,5 @@
 import AliceCarousel from 'react-alice-carousel'
-import { Activity } from 'lucide-react'
+import { Activity, MapPin } from 'lucide-react'
 import {
 	Avatar,
 	AvatarFallback,
@@ -78,7 +78,7 @@ export const Dashboard = () => {
 				<h1 className='text-rose-600 font-bold text-2xl'>Kerja Yuk!</h1>
 				<Link
 					to='/notification'
-					className={buttonVariants({ variant: 'ghost' })}>
+					className={buttonVariants({ variant: 'ghost', size: 'icon' })}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='24'
@@ -108,7 +108,7 @@ export const Dashboard = () => {
 						<CardHeader>
 							<div className='flex items-center gap-4'>
 								<Avatar className='h-14 w-14 shadow-lg'>
-									<AvatarImage src='https://github.com/shadcn.png' />
+									<AvatarImage src='/images/profile-7.jpg' />
 									<AvatarFallback>Profile Photo</AvatarFallback>
 								</Avatar>
 								<ColumnElementContainer className='gap-1'>
@@ -125,10 +125,12 @@ export const Dashboard = () => {
 							</ColumnElementContainer>
 						</CardHeader>
 
-						<CardFooter className='mt-4'>
+						<CardFooter className='mt-5'>
 							<ColumnElementContainer className='gap-1'>
-								<span className='text-sm'>Card Footer</span>
-								<span className='font-bold'>Kantor Sahid</span>
+								<span className='text-sm flex items-center gap-1'>
+									<MapPin size={13} /> Location
+								</span>
+								<span className='font-bold'>Avengers Office</span>
 							</ColumnElementContainer>
 							<Activity />
 						</CardFooter>

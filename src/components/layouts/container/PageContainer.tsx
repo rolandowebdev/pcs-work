@@ -9,7 +9,7 @@ export const PageContainer = ({ children, className }: PageContainerProps) => {
 	return (
 		<main
 			className={cn(
-				'mx-auto mt-8 mb-28 w-full max-w-lg px-4 sm:px-0',
+				'mx-auto mt-4 mb-28 w-full max-w-lg px-4 sm:px-0',
 				className
 			)}>
 			{children}
