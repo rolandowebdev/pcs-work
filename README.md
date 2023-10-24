@@ -1,7 +1,7 @@
 # PCS Work Preview
 
-[![Home Page PCS Work](public/home.png)]
-[![Notification Page PCS Work](public/notification.png)]
+[![Home Page PCS Work](public/images/home.png)](https://pcs-work.netlify.app/)
+[![Notification Page PCS Work](public/images/notification.png)](https://pcs-work.netlify.app/)
 
 ## Getting Started
 
@@ -20,10 +20,10 @@ Node.js version `>= 16.x` setup with [PNPM](https://pnpm.io/) is recommended.
 pnpm install
 
 # serve with hot reload at localhost:5173
-pnpm dev
+pnpm run dev
 
 # build for production
-pnpm build
+pnpm run build
 ```
 
 ## Tech Stack
