@@ -2,7 +2,7 @@ import { useLayoutEffect, useState } from 'react'
 
 export const useMobile = () => {
 	const [isMobile, setIsMobile] = useState(
-		typeof window !== 'undefined' ? window.innerWidth < 768 : false
+		typeof window !== 'undefined' ? window.innerWidth < 640 : false
 	)
 
 	useLayoutEffect(() => {

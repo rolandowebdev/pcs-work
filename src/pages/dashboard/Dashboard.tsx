@@ -37,10 +37,10 @@ export const Dashboard = () => {
 		return (
 			<Card
 				key={news.id}
-				className='shadow-md mb-[2px] mr-4 p-4 w-[98%] md:w-[95%]'>
+				className='shadow-md mb-[2px] mr-4 p-4 w-[97%] md:w-[95%]'>
 				<CardHeader>
 					<div className='flex items-center gap-2'>
-						<Avatar className='h-14 w-14'>
+						<Avatar className='h-10 w-10 lg:h-14 lg:w-14'>
 							<AvatarImage src={news.image} />
 							<AvatarFallback>{news.name}</AvatarFallback>
 						</Avatar>
@@ -62,7 +62,7 @@ export const Dashboard = () => {
 				<Separator className='my-4' />
 
 				<CardContent>
-					<CardDescription className='text-gray-500'>
+					<CardDescription className='text-gray-500 text-xs sm:text-sm lg:text-md'>
 						{news.description}
 					</CardDescription>
 				</CardContent>
@@ -175,7 +175,7 @@ export const Dashboard = () => {
 					<AliceCarousel
 						infinite
 						autoPlay
-						autoWidth
+						autoWidth={isMobile ? false : true}
 						paddingLeft={12}
 						paddingRight={12}
 						items={newsItems}
