@@ -43,14 +43,14 @@ export const Dashboard = () => {
 							<AvatarFallback>{news.name}</AvatarFallback>
 						</Avatar>
 						<ColumnElementContainer className='gap-1'>
-							<CardTitle>{news.name}</CardTitle>
+							<CardTitle className='text-sm lg:text-lg'>{news.name}</CardTitle>
 						</ColumnElementContainer>
 					</div>
 
 					<ColumnElementContainer className='gap-2'>
 						<span className='text-sm'>{formatDay(news.date)},</span>
 						<time
-							className='font-bold leading-none'
+							className='font-bold leading-none text-sm lg:text-lg'
 							dateTime={formatDate(news.date)}>
 							{formatDate(news.date)}
 						</time>
@@ -141,10 +141,10 @@ export const Dashboard = () => {
 								className='border hover:bg-gray-100 transition-all duration-300 cursor-default'>
 								<CardHeader className='py-2'>{activity.icon}</CardHeader>
 
-								<CardContent className='p-2'>
+								<CardContent className='p-0 md:p-2'>
 									<CardTitle
 										className={cn(
-											'text-center',
+											'text-center text-xs sm:text-base lg:text-xl',
 											activity.hour === '03:00:00' ? 'text-rose-600' : ''
 										)}>
 										{activity.hour}
@@ -152,7 +152,7 @@ export const Dashboard = () => {
 								</CardContent>
 
 								<CardFooter className='py-2'>
-									<CardDescription className='mx-auto'>
+									<CardDescription className='mx-auto text-xs sm:text-lg text-center'>
 										{activity.text}
 									</CardDescription>
 								</CardFooter>
@@ -179,9 +179,9 @@ export const Dashboard = () => {
 				</SectionContainer>
 
 				<SectionContainer title='Online'>
-					<Card className='shadow-md h-32'>
+					<Card className='shadow-md'>
 						<CardContent>
-							<div className='flex justify-center items-center'>
+							<div className='flex flex-wrap justify-center items-center'>
 								{listPeople.map((people) => (
 									<ColumnElementContainer
 										key={people.id}
