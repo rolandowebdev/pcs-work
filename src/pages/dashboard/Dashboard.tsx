@@ -35,7 +35,9 @@ export const Dashboard = () => {
 
 	const newsItems = listNews.map((news) => {
 		return (
-			<Card key={news.id} className='shadow-md mb-[2px] mr-4 p-4 w-full'>
+			<Card
+				key={news.id}
+				className='shadow-md mb-[2px] mr-4 p-4 w-[98%] md:w-[95%]'>
 				<CardHeader>
 					<div className='flex items-center gap-2'>
 						<Avatar className='h-14 w-14'>
@@ -174,6 +176,8 @@ export const Dashboard = () => {
 						infinite
 						autoPlay
 						autoWidth
+						paddingLeft={12}
+						paddingRight={12}
 						items={newsItems}
 						responsive={responsive}
 						disableButtonsControls
