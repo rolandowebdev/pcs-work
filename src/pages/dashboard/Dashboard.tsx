@@ -35,7 +35,7 @@ export const Dashboard = () => {
 
 	const newsItems = listNews.map((news) => {
 		return (
-			<Card key={news.id} className='shadow-md mb-[2px] mr-4 p-4'>
+			<Card key={news.id} className='shadow-md mb-[2px] mr-4 p-4 w-full'>
 				<CardHeader>
 					<div className='flex items-center gap-2'>
 						<Avatar className='h-14 w-14'>
@@ -108,14 +108,20 @@ export const Dashboard = () => {
 									<AvatarFallback>Profile Photo</AvatarFallback>
 								</Avatar>
 								<ColumnElementContainer className='gap-1'>
-									<CardTitle>Daenarys</CardTitle>
-									<CardDescription>Software Engineer</CardDescription>
+									<CardTitle className='text-sm sm:text-md lg:text-xl'>
+										Daenarys
+									</CardTitle>
+									<CardDescription className='text-xs sm:text-sm lg:text-md'>
+										Software Engineer
+									</CardDescription>
 								</ColumnElementContainer>
 							</div>
 
 							<ColumnElementContainer className='gap-1'>
-								<span className='text-sm'>Member since</span>
-								<time className='font-bold leading-none' dateTime='2023-03-29'>
+								<span className='text-xs sm:text-sm'>Member since</span>
+								<time
+									className='font-bold leading-none text-sm sm:text-md lg:text-xl'
+									dateTime='2023-03-29'>
 									March 29, 2023
 								</time>
 							</ColumnElementContainer>
@@ -123,10 +129,12 @@ export const Dashboard = () => {
 
 						<CardFooter className='mt-5'>
 							<ColumnElementContainer className='gap-1'>
-								<span className='text-sm flex items-center gap-1'>
+								<span className='text-xs sm:text-sm flex items-center gap-1'>
 									<MapPin size={13} /> Location
 								</span>
-								<span className='font-bold'>Avengers Office</span>
+								<span className='font-bold text-sm sm:text-md lg:text-xl'>
+									Avengers Office
+								</span>
 							</ColumnElementContainer>
 							<Activity />
 						</CardFooter>
@@ -165,6 +173,7 @@ export const Dashboard = () => {
 					<AliceCarousel
 						infinite
 						autoPlay
+						autoWidth
 						items={newsItems}
 						responsive={responsive}
 						disableButtonsControls
@@ -178,7 +187,7 @@ export const Dashboard = () => {
 				<SectionContainer title='Online'>
 					<Card className='shadow-md'>
 						<CardContent>
-							<div className='flex flex-wrap justify-center items-center'>
+							<div className='flex flex-wrap justify-center items-center gap-y-2'>
 								{listPeople.map((people) => (
 									<ColumnElementContainer
 										key={people.id}
