@@ -9,7 +9,7 @@ import {
 
 export const BottomNavbar = () => {
 	return (
-		<nav className='sticky bottom-0 z-50 w-full'>
+		<nav className='fixed bottom-0 z-50 w-full'>
 			<div className='relative flex items-center justify-between h-full max-w-lg mx-auto font-medium bg-white p-2 border rounded-t-md shadow-2xl'>
 				<div className='flex items-center'>
 					<Button
