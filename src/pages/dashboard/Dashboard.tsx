@@ -165,9 +165,6 @@ export const Dashboard = () => {
 					<AliceCarousel
 						infinite
 						autoPlay
-						autoWidth
-						paddingLeft={12}
-						paddingRight={12}
 						items={newsItems}
 						responsive={responsive}
 						disableButtonsControls
