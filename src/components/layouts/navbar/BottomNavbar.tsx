@@ -34,7 +34,7 @@ export const BottomNavbar = () => {
 					</Button>
 				</div>
 
-				<div className='flex flex-col items-center gap-2 absolute left-1/2 -top-6 -translate-x-1/2'>
+				<div className='flex flex-col items-center gap-2 absolute left-1/2 -top-6 -translate-x-[25%]'>
 					<Button className='rounded-full h-14 w-14 shadow-2xl lg:h-16 lg:w-16'>
 						<LogOut size={18} strokeWidth={2.5} />
 					</Button>
